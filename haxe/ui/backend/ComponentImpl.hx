@@ -168,7 +168,9 @@ class ComponentImpl extends ComponentBase implements ViewTreeObserver_OnGlobalLa
         if (style.backgroundColor != null) {
             var c:haxe.ui.util.Color = style.backgroundColor;
             if (view.getBackground() != null) {
-                view.getBackground().setColorFilter(Color.rgb(c.r, c.g, c.b), PorterDuff_Mode.MULTIPLY);
+                var background = view.getBackground();
+                background.setTint(Color.rgb(c.r, c.g, c.b));
+                background.setTintMode(PorterDuff_Mode.MULTIPLY);
             } else {
                 view.setBackgroundColor(Color.rgb(c.r, c.g, c.b));
             }

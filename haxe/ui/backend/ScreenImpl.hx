@@ -9,6 +9,7 @@ import android.view.View;
 
 class ScreenImpl extends ScreenBase implements ViewTreeObserver_OnGlobalLayoutListener {
     public function new() {
+        rootComponents = [];
     }
 
     private override function get_width():Float {
